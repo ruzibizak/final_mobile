@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.example.smater_monitor"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.firebase:firebase-analytics:21.2.0'
+    implementation 'com.google.firebase:firebase-crashlytics:18.3.1'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+    implementation 'com.google.android.gms:play-services-gcm:18.0.1'
+    implementation 'com.google.android.gms:play-services-base:18.1.0'
+    implementation 'com.google.android.gms:play-services-ads:23.0.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+    implementation 'com.google.android.gms:play-services-tasks:18.0.1'
+    implementation 'com.google.android.gms:play-services-stats:18.0.1'
+    implementation 'com.google.android.gms:play-services-nearby:18.0.0'
+    implementation 'com.google.android.gms:play-services-vision:20.1.3'
+    implementation 'com.google.android.gms:play-services-vision-image-label:18.0.4'
+    implementation 'com.google.android.gms:play-services-vision-face:20.1.3'
+    implementation 'com.google.android.gms:play-services-vision-barcode-scanner:19.0.1'
+    implementation 'com.google.android.gms:play-services-wearable:20.0.1'
+    implementation 'com.google.android.gms:play-services-safetynet:19.0.0'
+    implementation 'com.google.android.gms:play-services-cast:20.2.0'
+    implementation 'com.google.android.gms:play-services-cast-framework:19.1.0'
+    implementation 'com.google.android.gms:play-services-cast-media:20.2.0'
+    implementation 'com.google.android.gms:play-services-drive:19.0.0'
+    implementation 'com.google.android.gms:play-services-games:21.0.0'
+}
